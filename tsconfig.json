@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es2022",
+        "module": "ES2022",
+        "rootDir": "./",
+        "moduleResolution": "Node16",
+        "resolveJsonModule": true,
+        "declaration": false,
+        "declarationMap": false,
+        "sourceMap": false,
+        "outDir": "./dist",
+        "removeComments": false,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true
+    },
+    "include": ["src/**/*", "config.ts", "environment.d.ts", "The HamsterDance Song.mp3"],
+    "exclude": ["node_modules"]
+}
