@@ -6,4 +6,8 @@
  *
  * For more vital configuration, see .env
  */
-export const Prefix = "-";
+export const Prefix = "-"; // The prefix for the bot to listen for
+
+export const ChannelName = "hamster"; // The name of the channel to listen for joins and disconnects for, CASE SENSITIVE
+
+export const AudioFile = "./The HamsterDance Song.mp3"; // The path to the audio file to play, relative to where you run the bot from

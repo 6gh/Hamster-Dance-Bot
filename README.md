@@ -18,4 +18,20 @@ You can host this bot yourself by following the steps below
 4. Run `pnpm start` to build and start the bot!
 5. That's it! Use the bot the same as in [Usage](#usage)
 
-> Optional: Change the bot's prefix in the `config.ts` file to whatever you want.
+### Customizable options
+
+If you go through the [self-hosting route](#self-hosting), you are able to change the channel name to monitor, the audio file to play, and the prefix. These settings are in the file, `config.ts` found in the root of the project.
+
+The settings consist of the following
+
+| Name        | Description                                                        | Default                       |
+| ----------- | ------------------------------------------------------------------ | ----------------------------- |
+| Prefix      | The bot prefix for text commands                                   | "-"                           |
+| ChannelName | The name of the channel to monitor                                 | "hamster"                     |
+| AudioFile   | The path of the file that will play when someone joins ChannelName | "./The HamsterDance Song.mp3" |
+
+> NOTE: AudioFile is relative to where you are running the bot from! If you use `pnpm start`, chances are that this is the root of the project
+
+> CAUTION: ChannelName is case sensitive!
+
+If you are using my bot, you cannot change these at the moment

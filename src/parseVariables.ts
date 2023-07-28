@@ -1,4 +1,4 @@
-import { Prefix } from "../config.js";
+import { AudioFile, ChannelName, Prefix } from "../config.js";
 
 /**
  * Parse the environment variables and config.ts into a single object
@@ -15,6 +15,8 @@ export function parseVariables(): Variables {
         botToken: process.env.BOT_TOKEN,
 
         prefix: Prefix || "!",
+        channelName: ChannelName || "hamster",
+        audioFile: AudioFile || "./The HamsterDance Song.mp3",
     };
 }
 
@@ -25,4 +27,6 @@ interface Variables {
     botToken: string;
 
     prefix: string;
+    channelName: string;
+    audioFile: string;
 }

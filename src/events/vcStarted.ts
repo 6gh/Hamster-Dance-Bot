@@ -1,4 +1,4 @@
-import { Log } from "../index.js";
+import { Config, Log } from "../index.js";
 import { BotEvent } from "../structures/botEvent.js";
 import {
     joinVoiceChannel,
@@ -16,7 +16,7 @@ export default new BotEvent({
 
         if (newState.channelId !== null && !newState.guild.members.me?.voice?.channelId) {
             Log.Debug("user joined channel", "voiceStateUpdate");
-            if (newState.channel?.name === "hamster") {
+            if (newState.channel?.name === Config.channelName) {
                 if (newState.channel.joinable) {
                     Log.Debug("attempting to join", "voiceStateUpdate");
                     const connection = joinVoiceChannel({
@@ -30,12 +30,12 @@ export default new BotEvent({
                         },
                     });
 
-                    let resource = createAudioResource("./The HamsterDance Song.mp3");
+                    let resource = createAudioResource(Config.audioFile);
                     Log.Debug("playing", "voiceStateUpdate");
                     player.play(resource);
                     player.on(AudioPlayerStatus.Idle, () => {
                         Log.Debug("looping", "voiceStateUpdate");
-                        resource = createAudioResource("./The HamsterDance Song.mp3");
+                        resource = createAudioResource(Config.audioFile);
                         player.play(resource);
                     });
 
@@ -43,7 +43,7 @@ export default new BotEvent({
                 }
             }
         } else {
-            if (oldState.channel?.name === "hamster") {
+            if (oldState.channel?.name === Config.channelName) {
                 if (oldState.channel.members.size === 1) {
                     const connection = getVoiceConnection(oldState.guild.id);
                     connection?.destroy();
